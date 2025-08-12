@@ -1,5 +1,5 @@
 {
-  "_id": "pf2e-xp-award",
+  "id": "pf2e-xp-award",
   "name": "pf2e-xp-award",
   "title": "PF2e XP Award",
   "description": "QoL XP-Verteilung: Nach Encountern wird der Spielleitung angeboten, berechnete XP direkt an die Party zu vergeben. Enthält zusätzlich ein Makro zur manuellen XP-Vergabe.",
