@@ -4,7 +4,7 @@
   "description": "QoL XP-Verteilung: Nach Encountern wird der Spielleitung angeboten, berechnete XP direkt an die Party zu vergeben. Enthält zusätzlich ein Makro zur manuellen XP-Vergabe.",
   "version": "1.0.0",
   "authors": [
-    { "name": "Foundry Pathfinder Coder" }
+    { "name": "Kazgul1987" }
   ],
   "systems": ["pf2e"],
   "compatibility": {
