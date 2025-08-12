@@ -1,0 +1,25 @@
+{
+  "_id": "pf2e-xp-award",
+  "name": "pf2e-xp-award",
+  "title": "PF2e XP Award",
+  "description": "QoL XP-Verteilung: Nach Encountern wird der Spielleitung angeboten, berechnete XP direkt an die Party zu vergeben. Enthält zusätzlich ein Makro zur manuellen XP-Vergabe.",
+  "version": "1.0.0",
+  "authors": [
+    { "name": "Foundry Pathfinder Coder" }
+  ],
+  "systems": ["pf2e"],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "scripts": ["scripts/auto-party-xp.js"],
+  "macros": [
+    {
+      "name": "PF2e Party XP Dropdown",
+      "path": "macros/party-xp-dropdown.js",
+      "type": "script"
+    }
+  ],
+  "manifest": "https://raw.githubusercontent.com/Kazgul/pf2e-xp-award/main/module.json",
+  "download": "https://github.com/Kazgul/pf2e-xp-award/releases/download/v1.0.0/module.zip"
+}
