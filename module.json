@@ -3,7 +3,7 @@
   "name": "pf2e-xp-award",
   "title": "PF2e XP Award",
   "description": "QoL XP-Verteilung: Nach Encountern wird der Spielleitung angeboten, berechnete XP direkt an die Party zu vergeben. Enthält zusätzlich ein Makro zur manuellen XP-Vergabe.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "authors": [
     { "name": "Kazgul1987" }
   ],
