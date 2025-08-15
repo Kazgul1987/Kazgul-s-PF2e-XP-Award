@@ -34,13 +34,31 @@ Hooks.on("deleteCombat", async (combat) => {
 
   if (!baseXP || recipients.length === 0) return;
 
-  const xp = baseXP * recipients.length;
+  const defaultXP = baseXP;
 
-  const confirmed = await Dialog.confirm({
-    title: game.i18n.localize("PF2E.Encounter.AwardXP"),
-    content: `<p>${game.i18n.format("Award XP for this encounter?", { xp, count: recipients.length })}</p>`
+  const xp = await new Promise(resolve => {
+    new Dialog({
+      title: game.i18n.localize("PF2E.Encounter.AwardXP"),
+      content: `<p>${game.i18n.format("Award XP for this encounter?", { xp: defaultXP, count: recipients.length })}</p>` +
+        `<div class="form-group"><label>XP: <input type="number" name="xp" value="${defaultXP}"/></label></div>`,
+      buttons: {
+        yes: {
+          label: game.i18n.localize("Yes"),
+          callback: html => {
+            const input = html.find('input[name="xp"]')[0];
+            resolve(Number(input?.value) || defaultXP);
+          }
+        },
+        no: {
+          label: game.i18n.localize("No"),
+          callback: () => resolve(null)
+        }
+      },
+      default: "yes",
+      close: () => resolve(null)
+    }).render(true);
   });
-  if (!confirmed) return;
+  if (xp === null) return;
 
   for (const actor of recipients) {
     await applyXP(actor, xp);
