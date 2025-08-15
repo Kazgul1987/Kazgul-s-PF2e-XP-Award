@@ -38,7 +38,7 @@ Hooks.on("deleteCombat", async (combat) => {
 
   const confirmed = await Dialog.confirm({
     title: game.i18n.localize("PF2E.Encounter.AwardXP"),
-    content: `<p>${game.i18n.format("PF2E.Encounter.GrantXP", { xp, count: recipients.length })}</p>`
+    content: `<p>${game.i18n.format("Award XP for this encounter?", { xp, count: recipients.length })}</p>`
   });
   if (!confirmed) return;
 
