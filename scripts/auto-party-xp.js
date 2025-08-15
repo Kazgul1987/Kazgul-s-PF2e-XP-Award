@@ -63,6 +63,6 @@ Hooks.on("deleteCombat", async (combat) => {
   for (const actor of recipients) {
     await applyXP(actor, xp);
   }
-
+  await ChatMessage.create({content: `The party received ${xp} XP. Well fought Ladies and Gents!`});
   ui.notifications.info(game.i18n.format("PF2E.Encounter.XPAwarded", { xp, count: recipients.length }));
 });
